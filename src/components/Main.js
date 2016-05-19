@@ -22,7 +22,7 @@ class AppComponent extends React.Component {
     //   temperature: 70
     // });
     setInterval(()=>{
-      fetch('http://10.0.0.7:5000/').then((response) => {
+      fetch('http://127.0.0.1:5000/').then((response) => {
         return response.json();
       }).then((j) => {
         this.setState({
@@ -55,7 +55,7 @@ class AppComponent extends React.Component {
   }
 
   increaseTemp() {
-    fetch('http://10.0.0.7:5000/increaseTemp').then((response) => {
+    fetch('http://127.0.0.1:5000/increaseTemp').then((response) => {
       return response.json();
     }).then((j) => {
       this.setState({
@@ -66,7 +66,7 @@ class AppComponent extends React.Component {
   }
 
   decreaseTemp() {
-    fetch('http://10.0.0.7:5000/decreaseTemp').then((response) => {
+    fetch('http://127.0.0.1:5000/decreaseTemp').then((response) => {
       return response.json();
     }).then((j) => {
       this.setState({
@@ -77,7 +77,7 @@ class AppComponent extends React.Component {
   }
 
   resumeProgram() {
-    fetch('http://10.0.0.7:5000/resumeProgram').then((response) => {
+    fetch('http://127.0.0.1:5000/resumeProgram').then((response) => {
       return response.json();
     }).then((j) => {
       this.setState({
