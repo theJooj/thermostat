@@ -1,0 +1,55 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css');
+@import './WeatherForecast.less';
+@import './Thermostat.less';
+
+/* Base Application Styles */
+body {
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  cursor: none;
+  overflow: hidden;
+}
+
+p {
+  margin: 0;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  height: 480px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.screensaver {
+  background: #000;
+  color: #888;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  height: 480px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  p {
+    flex: 1;
+    text-align: center;
+    font-size: 6em;
+  }
+}
+
+.thermostat {
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+
+.forecast {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}

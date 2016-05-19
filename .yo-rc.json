@@ -1,0 +1,7 @@
+{
+  "generator-react-webpack": {
+    "appName": "thermostatFrontend",
+    "style": "less",
+    "postcss": false
+  }
+}

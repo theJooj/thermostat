@@ -1,0 +1,72 @@
+.weatherWidget {
+  background: #999;
+  color: #fff;
+  font-size: 10px;
+  margin: 20px;
+  flex: 1;
+}
+
+.widgetContent {
+  padding: 15px;
+  padding-bottom: 0;
+}
+
+.location {
+  font-size: 1.5em;
+}
+
+.currentConditions {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0;
+
+  p {
+    font-size: 3em;
+    margin-right: 20px;
+  }
+}
+
+.feelsLike {
+  font-size: 10px;
+  margin-top: -10px;
+}
+
+.conditionText {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.threeDay {
+  background: #fff;
+  color: #fff;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    flex-direction: row;
+
+    div {
+      color: #888;
+      padding: 10px;
+      flex: 1;
+    }
+
+    &:nth-child(even) {
+      background: #f5f5f5;
+    }
+  }
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
