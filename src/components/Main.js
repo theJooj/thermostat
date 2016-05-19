@@ -47,11 +47,11 @@ class AppComponent extends React.Component {
         screensaver();
       }, 1000)
     }
-    // screensaver();
+    screensaver();
   }
 
   resetCounter(){
-    this.setState({counter: 10});
+    this.setState({counter: 60});
   }
 
   increaseTemp() {
