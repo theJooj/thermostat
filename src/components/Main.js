@@ -11,16 +11,10 @@ class AppComponent extends React.Component {
     this.state = {
       tempLoading: true,
       tempOverride: false,
-      currentState: 'off',
-      counter: 60
+      currentState: 'off'
     };
   }
   componentWillMount() {
-    // used for testing when away from python server
-    // this.setState({
-    //   tempLoading: false,
-    //   temperature: 70
-    // });
     setInterval(()=>{
       fetch('http://127.0.0.1:5000/').then((response) => {
         return response.json();
@@ -34,24 +28,6 @@ class AppComponent extends React.Component {
         });
       });
     }, 5000);
-
-    const screensaver = () => {
-      setTimeout(() => {
-        let newCounter;
-        if(this.state.counter > 0) {
-          newCounter = this.state.counter - 1;
-          this.setState({counter: newCounter});
-        } else {
-          this.setState({counter: 0});
-        }
-        screensaver();
-      }, 1000)
-    }
-    screensaver();
-  }
-
-  resetCounter(){
-    this.setState({counter: 60});
   }
 
   increaseTemp() {
@@ -88,26 +64,18 @@ class AppComponent extends React.Component {
   }
 
   render() {
-    const dashboardContent = this.state.counter > 0 ?
-    <div className="dashboard">
-      <Thermostat
-        currentState = {this.state.currentState}
-        tempOverride = {this.state.tempOverride}
-        tempLoading = {this.state.tempLoading}
-        temperature = {this.state.temperature}
-        targetTemp = {this.state.targetTemp}
-        resumeProgram = {this.resumeProgram}
-        increaseTemp = {this.increaseTemp}
-        decreaseTemp = {this.decreaseTemp} />
-      <WeatherForecast />
-    </div>
-    :
-    <div className="screensaver">
-      <p>{this.state.temperature}<i className="wi wi-fahrenheit" /></p>
-    </div>
     return (
-      <div onClick={this.resetCounter.bind(this)}>
-        {dashboardContent}
+      <div className="dashboard">
+        <Thermostat
+          currentState = {this.state.currentState}
+          tempOverride = {this.state.tempOverride}
+          tempLoading = {this.state.tempLoading}
+          temperature = {this.state.temperature}
+          targetTemp = {this.state.targetTemp}
+          resumeProgram = {this.resumeProgram}
+          increaseTemp = {this.increaseTemp}
+          decreaseTemp = {this.decreaseTemp} />
+        <WeatherForecast />
       </div>
     );
   }
